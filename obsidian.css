@@ -231,17 +231,14 @@ blockquote {
 .cm-s-obsidian,
 .app-container {
   font-family: Avenir;
-  font-size: 18px;
-  /*Editor font-size*/
-  padding-left: 4px;
+  font-size: 18px; /*Editor font-size*/
 }
 
-.cm-s-obsidian
 /*Editor padding*/
-
+.cm-s-obsidian
 {
-  /* padding-left: 10% !important; */
-  padding-right: 10% !important;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
 }
 
 .CodeMirror-scroll::-webkit-scrollbar {
@@ -251,7 +248,7 @@ blockquote {
 .markdown-preview-view {
   font-family: Avenir;
   font-size: 18px;
-  /* padding-left: 10% !important; */
+  padding-left: 10% !important;
   padding-right: 10% !important;
 }
 
@@ -501,4 +498,3 @@ blockquote {
   text-decoration: none;
   font-weight: bold;
 }
-
