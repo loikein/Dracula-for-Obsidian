@@ -1,21 +1,20 @@
-
-body, p {
+body,
+p {
   font-family: iAWriterQuattroS-Regular, "Dank Mono", Roboto, Helvetica, Arial, "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 18px; /*preview font-size*/ 
+  font-size: 18px; /*preview font-size*/
 }
 
 .editor {
-    font-family:iAWriterQuattroS-Regular,"Dank Mono", Roboto, Helvetica, Arial, "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 18px;
+  font-family: iAWriterQuattroS-Regular, "Dank Mono", Roboto, Helvetica, Arial, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
 }
 
 .preview {
-    font-family:iAWriterQuattroS-Regular,"Dank Mono", Roboto, Helvetica, Arial, "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 18px;
+  font-family: iAWriterQuattroS-Regular, "Dank Mono", Roboto, Helvetica, Arial, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
 }
 
-.theme-dark
-{
+.theme-dark {
   --background-primary: #282a36;
   --background-primary-alt: #44475a;
   --background-secondary: #282828;
@@ -42,181 +41,161 @@ body, p {
   --interactive-accent-rgb: #ffb86c;
 }
 
-.theme-light
-{
-  --background-primary: #fbf1c7; /* bg */
-  --background-primary-alt: #fbf1c7; /* bg */
-  --background-secondary: #f9f5d7; /* bg0_h */
-  --background-secondary-alt: #ebdbb2; /* bg1 */
-  --text-normal: #282a36; /* fg0 */
-  --text-faint: #665c54; /* fg3 */
-  --text-title-h1: #9d0006; /* dark red */
-  --text-title-h2: #af3a03; /* dark orange */
-  --text-title-h3: #b57614; /* dark yellow */
-  --text-title-h4: #79740e; /* dark green */
-  --text-title-h5: #427b58; /* dark aqua */
+.theme-light {
+  --background-primary: #fbf1c7;
+  --background-primary-alt: #fbf1c7;
+  --background-secondary: #f9f5d7;
+  --background-secondary-alt: #ebdbb2;
+  --text-normal: #282a36;
+  --text-faint: #665c54;
+  --text-title-h1: #9d0006;
+  --text-title-h2: #af3a03;
+  --text-title-h3: #b57614;
+  --text-title-h4: #79740e;
+  --text-title-h5: #427b58;
   --text-title-h6: #063642;
-  --text-link: #458588; /* light blue */
-  --text-a: #d65d0e; /* light orange */
-  --text-a-hover: #458588; /* light blue */
-  --text-mark: #d79921; /* light yellow */
-  --pre-code: #ebdbb2; /* bg1 */
-  --text-highlight-bg: #689d6a; /* light aqua */
-  --interactive-accent: #d65d0e; /* light orange */
-  --interactive-before: #a89984; /* bg4 */
-  --background-modifier-border: #d5c4a1; /* bg2 */
-  --text-accent: #d65d0e; /* light orange */
-  --interactive-accent-rgb: #d65d0e; /* light orange */
+  --text-link: #458588;
+  --text-a: #d65d0e;
+  --text-a-hover: #458588;
+  --text-mark: #d79921;
+  --pre-code: #ebdbb2;
+  --text-highlight-bg: #689d6a;
+  --interactive-accent: #d65d0e;
+  --interactive-before: #a89984;
+  --background-modifier-border: #d5c4a1;
+  --text-accent: #d65d0e;
+  --interactive-accent-rgb: #d65d0e;
   --text-muted: #063642;
 }
 
-#graph-view-canvas .links
-{
+#graph-view-canvas .links {
   stroke: var(--interactive-accent-rgb) !important;
 }
 
-.checkbox-container
-{
+.checkbox-container {
   background-color: var(--interactive-before);
   height: 16px !important;
   width: 34px !important;
 }
 
-.checkbox-container:after
-{
+.checkbox-container:after {
   background-color: var(--background-secondary-alt);
   height: 11px !important;
   width: 14px !important;
   left: -4px !important;
 }
 
-html, body
-{
+html,
+body {
   font-size: 18px;
 }
 
-strong
-{
+strong {
   font-weight: bolder;
 }
 
-a, .internal-link, .cm-hmd-internal-link, .cm-link, .cm-formatting-link
-{
+a,
+.internal-link,
+.cm-hmd-internal-link,
+.cm-link,
+.cm-formatting-link {
   color: var(--text-a) !important;
   text-decoration: none !important;
 }
 
-.cm-formatting-link
-{
+.cm-formatting-link {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
-a:hover, .internal-link:hover
-{
+a:hover,
+.internal-link:hover {
   color: var(--text-a-hover) !important;
   text-decoration: none !important;
 }
 
-mark
-{
+mark {
   background-color: var(--text-mark) !important;
 }
 
-.file-view-actions a, .cm-quote
-{
+.file-view-actions a,
+.cm-quote {
   color: var(--text-normal) !important;
 }
 
-.file-view-actions a:hover
-{
+.file-view-actions a:hover {
   color: var(--text-a) !important;
 }
 
-.cl-underlined-text
-{
+.cl-underlined-text {
   text-decoration: none !important;
   color: var(--text-link) !important;
 }
 
-.cm-tag
-{
+.cm-tag {
   color: var(--text-faint);
 }
 
-pre code
-{
+pre code {
   padding: 8px !important;
   line-height: normal;
   display: block;
   background-color: var(--pre-code) !important;
 }
 
-.markdown-preview-view pre
-{
+.markdown-preview-view pre {
   padding: 0px !important;
 }
 
-code, .cm-inline-code
-{
+code,
+.cm-inline-code {
   background-color: var(--pre-code) !important;
   color: var(--text-muted) !important;
   bottom: 0px !important;
 }
 
-.markdown-preview-view code
-{
+.markdown-preview-view code {
   font-size: 13.5px;
 }
 
-th
-{
+th {
   font-weight: 600 !important;
 }
 
-thead
-{
+thead {
   border-bottom: 2px solid var(--background-modifier-border);
 }
 
-img
-{
+img {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-blockquote
-{
+blockquote {
   border-color: var(--blockquote-border) !important;
 }
 
-.markdown-preview-view hr
-{
+.markdown-preview-view hr {
   background-color: var(--text-normal);
 }
 
-.main-container-header
-{
+.main-container-header {
   padding-top: 0 !important;
 }
 
-.title
-{
+.title {
   font-weight: 600 !important;
 }
 
-.side-dock-panels-container
-{
+.side-dock-panels-container {
   border-right: 1px solid var(--background-secondary-alt) !important;
 }
 
-.side-dock-panels-container *
-{
+.side-dock-panels-container * {
   font-size: 14px !important;
 }
 
-.side-dock-title
-{
+.side-dock-title {
   padding-top: 14px !important;
   font-size: 18px !important;
   font-weight: 800 !important
@@ -226,44 +205,42 @@ blockquote
 .side-dock-ribbon-action:hover,
 .side-dock-ribbon-action.is-active:hover,
 .nav-action-button:hover,
-.side-dock-collapse-btn:hover
-{
+.side-dock-collapse-btn:hover {
   color: var(--text-a);
 }
 
-.nav-file
-{
+.nav-file {
   line-height: normal;
 }
 
-.nav-file-title-content
-{
+.nav-file-title-content {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
-.plugin
-{
+.plugin {
   padding: 5px 10px !important;
   margin: 0 !important;
 }
 
-.is-read-mode .markdown-preview-view p
-{
-font-family: Avenir;
-font-size: 18px;
+.is-read-mode .markdown-preview-view p {
+  font-family: Avenir;
+  font-size: 18px;
 }
 
-.cm-s-obsidian, .app-container
-{
+.cm-s-obsidian,
+.app-container {
   font-family: Avenir;
-  font-size: 18px; /*Editor font-size*/
+  font-size: 18px;
+  /*Editor font-size*/
   padding-left: 4px;
 }
 
-.cm-s-obsidian  /*Editor padding*/
+.cm-s-obsidian
+/*Editor padding*/
+
 {
-  padding-left: 10% !important;
+  /* padding-left: 10% !important; */
   padding-right: 10% !important;
 }
 
@@ -271,21 +248,18 @@ font-size: 18px;
   display: none;
 }
 
-.markdown-preview-view
-{
+.markdown-preview-view {
   font-family: Avenir;
   font-size: 18px;
-  padding-left: 10% !important;
+  /* padding-left: 10% !important; */
   padding-right: 10% !important;
 }
 
-.markdown-embed-title
-{
+.markdown-embed-title {
   font-weight: 600;
 }
 
-.markdown-embed
-{
+.markdown-embed {
   padding-left: 10px !important;
   padding-right: 10px !important;
   margin-left: 10px !important;
@@ -293,8 +267,7 @@ font-size: 18px;
 }
 
 .cm-header-1,
-.markdown-preview-view h1
-{
+.markdown-preview-view h1 {
   font-family: Avenir;
   font-weight: 500;
   font-size: 34px;
@@ -303,8 +276,7 @@ font-size: 18px;
 }
 
 .cm-header-2,
-.markdown-preview-view h2
-{
+.markdown-preview-view h2 {
   font-family: Avenir;
   font-weight: 500;
   font-size: 28px;
@@ -313,8 +285,7 @@ font-size: 18px;
 }
 
 .cm-header-3,
-.markdown-preview-view h3
-{
+.markdown-preview-view h3 {
   font-family: Avenir;
   font-weight: 500;
   font-size: 26px;
@@ -323,8 +294,7 @@ font-size: 18px;
 }
 
 .cm-header-4,
-.markdown-preview-view h4
-{
+.markdown-preview-view h4 {
   font-family: Avenir;
   font-weight: 500;
   font-size: 22px;
@@ -333,27 +303,24 @@ font-size: 18px;
 }
 
 .cm-header-5,
-.markdown-preview-view h5
-{
+.markdown-preview-view h5 {
   font-family: Avenir;
   font-weight: 500;
   font-size: 20px;
   font-weight: bold;
-  color: var(--text-title-h5); 
+  color: var(--text-title-h5);
 }
 
 .cm-header-6,
-.markdown-preview-view h6
-{
+.markdown-preview-view h6 {
   font-family: Avenir;
   font-weight: 500;
   font-size: 20px;
   font-weight: bold;
-  color: var(--text-title-h6); 
+  color: var(--text-title-h6);
 }
 
-.table
-{
+.table {
   background-color: var(--background-secondary-alt);
   border: 1px solid var(--background-modifier-border);
   padding: 4px;
@@ -365,16 +332,15 @@ font-size: 18px;
   border-bottom-left-radius: 4px;
 }
 
-.suggestion-item.is-selected
-{
+.suggestion-item.is-selected {
   background-color: var(--background-secondary);
 }
 
-.empty-state-container:hover
-{
+.empty-state-container:hover {
   background-color: var(--background-secondary-alt);
   border: 5px solid var(--interactive-accent) !important;
 }
+
 .theme-light strong {
   color: var(--text-a) !important;
   font-weight: bolder;
@@ -390,41 +356,149 @@ font-size: 18px;
 }
 
 .theme-dark em {
-  color:#b5c7c7; 
+  color: #b5c7c7;
 }
 
-.cm-s-obsidian .cm-strong
-{
+.cm-s-obsidian .cm-strong {
   font-weight: bolder;
   color: var(--text-a) !important;
 }
 
-.search-result-file-title
-{
+.search-result-file-title {
   color: var(--text-a) !important;
   font-weight: bolder;
 }
+
 
 /* condense line spacing on file explorer title list. also avoids character-level word breaks*/
-.nav-file-title-content,.search-result-file-title,.search-result-file-match,.search-result-file-title
-{
+
+.nav-file-title-content,
+.search-result-file-title,
+.search-result-file-match,
+.search-result-file-title {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   line-height: normal !important;
   word-break: keep-all;
 }
 
+
 /*clean up side bar empty state (e.g. unlinked mentions not having odd spacing when side bar is narrow)*/
-.search-empty-state
-{
+
+.search-empty-state {
   width: auto;
   padding-left: 15px;
   padding-right: 15px;
   line-height: normal;
 }
 
+
 /* Changing backlink pane font-size and color*/
-.search-result-file-matches
-{
-color: var(--text-normal) !important;
+
+.search-result-file-matches {
+  color: var(--text-normal) !important;
 }
+
+
+/* bear-like title style */
+
+
+/* source: https://gist.github.com/seanwcom/698cf161222d194118d217d77a380d8b */
+
+
+/* Enable wrapping of code blocks in the preview panel */
+
+.theme-light code[class*="language-"],
+.theme-light pre[class*="language-"] {
+  white-space: pre-wrap;
+}
+
+
+/* Changing size/color of the header hashtags ## */
+
+.cm-formatting-header {
+  color: #c7c7c7;
+  font-size: 0.6em;
+}
+
+
+/* Coloring the list bullets/numbers */
+
+.cm-s-obsidian span.cm-formatting-list {
+  color: #d40000;
+  font-size: 0.85em;
+}
+
+
+/* Code block border color */
+
+.cm-s-obsidian div.HyperMD-codeblock-begin-bg {
+  border-top: 1px solid #d2d2d2;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+
+/* Code block border color */
+
+.cm-s-obsidian div.HyperMD-codeblock-end-bg {
+  border-bottom: 1px solid #d2d2d2;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+
+/* Code block left and right padding */
+
+.cm-s-obsidian pre.HyperMD-codeblock {
+  padding: 0px 10px 0px 10px;
+}
+
+
+/* Code block top padding */
+
+.cm-s-obsidian pre.HyperMD-codeblock-begin {
+  padding-top: 10px;
+}
+
+
+/* Code block bottom padding */
+
+.cm-s-obsidian pre.HyperMD-codeblock-end {
+  padding-top: 10px;
+}
+
+
+/* Code block left and right border colors */
+
+.cm-s-obsidian div.HyperMD-codeblock-bg {
+  border-left: 1px solid #d2d2d2;
+  border-right: 1px solid #d2d2d2;
+}
+
+
+/* Tag left side pillbox */
+
+.cm-s-obsidian span.cm-hashtag-begin {
+  border-top-left-radius: 250px;
+  border-bottom-left-radius: 250px;
+  padding-left: 10px;
+  padding-bottom: 4px;
+  padding-top: 2px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* Tag right side pillbox */
+
+.cm-s-obsidian span.cm-hashtag-end {
+  border-top-right-radius: 250px;
+  border-bottom-right-radius: 250px;
+  padding-right: 12px;
+  padding-bottom: 4px;
+  padding-top: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
