@@ -38,16 +38,15 @@ p {
   --background-modifier-border: #8be9fd;
   --blockquote-border: #bd93f9;
   --text-accent: #8be9fd;
-  --interactive-accent-rgb: #ffb86c;
 }
 
 .theme-light {
-  --background-primary: #fbf1c7;
-  --background-primary-alt: #fbf1c7;
-  --background-secondary: #f9f5d7;
-  --background-secondary-alt: #ebdbb2;
-  --text-normal: #282a36;
-  --text-faint: #665c54;
+  --background-primary: #FCFCFC;
+  --background-primary-alt: #F1F1F1;
+  --background-secondary: #F1F1F1;
+  --background-secondary-alt: #CFC1ED;
+  --text-normal: #222222;
+  --text-faint: #777777;
   --text-title-h1: #9d0006;
   --text-title-h2: #af3a03;
   --text-title-h3: #b57614;
@@ -55,21 +54,20 @@ p {
   --text-title-h5: #427b58;
   --text-title-h6: #063642;
   --text-link: #458588;
-  --text-a: #d65d0e;
-  --text-a-hover: #458588;
-  --text-mark: #d79921;
-  --pre-code: #ebdbb2;
-  --text-highlight-bg: #689d6a;
-  --interactive-accent: #d65d0e;
-  --interactive-before: #a89984;
-  --background-modifier-border: #d5c4a1;
-  --text-accent: #d65d0e;
-  --interactive-accent-rgb: #d65d0e;
-  --text-muted: #063642;
+  --text-a: #8556B4;
+  --text-a-hover: #017B76;
+  --text-mark: #FAB8B8;
+  --pre-code: #F1F1F1;
+  --text-highlight-bg: #FAB8B8;
+  --interactive-accent: #8556B4;
+  --interactive-before: #FCFCFC;
+  --background-modifier-border: #8556B4;
+  --text-accent: #8556B4;
+  --text-muted: #777777;
 }
 
 #graph-view-canvas .links {
-  stroke: var(--interactive-accent-rgb) !important;
+  stroke: var(--interactive-accent) !important;
 }
 
 .checkbox-container {
@@ -107,14 +105,19 @@ a,
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
+.internal-link:after {
+  content: "\01F517";
+}
+
 a:hover,
 .internal-link:hover {
   color: var(--text-a-hover) !important;
   text-decoration: none !important;
 }
 
+/* ==highlight== in the preview */
 mark {
-  background-color: var(--text-mark) !important;
+  padding: 0.1em;
 }
 
 .file-view-actions a,
@@ -172,11 +175,20 @@ img {
 }
 
 blockquote {
-  border-color: var(--blockquote-border) !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-left: 0.2em !important;
+  padding-right: 0.2em !important;
+  background: var(--background-secondary);
 }
 
 .markdown-preview-view hr {
-  background-color: var(--text-normal);
+  height: 1px;
+  background: var(--background-modifier-border);
+  /* background-image: linear-gradient(to right, var(--background-primary),var(--background-modifier-border), var(--background-primary)); */
 }
 
 .main-container-header {
@@ -189,6 +201,7 @@ blockquote {
 
 .side-dock-panels-container {
   border-right: 1px solid var(--background-secondary-alt) !important;
+  color: var(--text-muted) !important;
 }
 
 .side-dock-panels-container * {
@@ -317,16 +330,20 @@ blockquote {
   color: var(--text-title-h6);
 }
 
-.table {
-  background-color: var(--background-secondary-alt);
-  border: 1px solid var(--background-modifier-border);
-  padding: 4px;
-  line-height: normal;
-  display: block;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
+table, table tr th, table tr td {
+  border: 1px solid var(--text-muted) !important;
+}
+
+table tr th {
+  background-color: var(--background-secondary) !important;
+}
+
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 4px !important;
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 4px !important;
 }
 
 .suggestion-item.is-selected {
@@ -398,10 +415,7 @@ blockquote {
 
 
 /* bear-like title style */
-
-
 /* source: https://gist.github.com/seanwcom/698cf161222d194118d217d77a380d8b */
-
 
 /* Enable wrapping of code blocks in the preview panel */
 
@@ -414,63 +428,8 @@ blockquote {
 /* Changing size/color of the header hashtags ## */
 
 .cm-formatting-header {
-  color: #c7c7c7;
+  color: var(--text-faint);
   font-size: 0.6em;
-}
-
-
-/* Coloring the list bullets/numbers */
-
-.cm-s-obsidian span.cm-formatting-list {
-  color: #d40000;
-  font-size: 0.85em;
-}
-
-
-/* Code block border color */
-
-.cm-s-obsidian div.HyperMD-codeblock-begin-bg {
-  border-top: 1px solid #d2d2d2;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-
-/* Code block border color */
-
-.cm-s-obsidian div.HyperMD-codeblock-end-bg {
-  border-bottom: 1px solid #d2d2d2;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-
-/* Code block left and right padding */
-
-.cm-s-obsidian pre.HyperMD-codeblock {
-  padding: 0px 10px 0px 10px;
-}
-
-
-/* Code block top padding */
-
-.cm-s-obsidian pre.HyperMD-codeblock-begin {
-  padding-top: 10px;
-}
-
-
-/* Code block bottom padding */
-
-.cm-s-obsidian pre.HyperMD-codeblock-end {
-  padding-top: 10px;
-}
-
-
-/* Code block left and right border colors */
-
-.cm-s-obsidian div.HyperMD-codeblock-bg {
-  border-left: 1px solid #d2d2d2;
-  border-right: 1px solid #d2d2d2;
 }
 
 
@@ -497,4 +456,43 @@ blockquote {
   padding-top: 6px;
   text-decoration: none;
   font-weight: bold;
+}
+
+/* add some header prefix in preview */
+/* source: https://github.com/obsidian-ezs/obsidian-ursa/blob/master/obsidian.css */
+
+h1::before {
+  content: 'H1 ';
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+h2::before {
+  content: 'H2 ';
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+h3::before {
+  content: 'H3 ';
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+h4::before {
+  content: 'H4 ';
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+h5::before {
+  content: 'H5 ';
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+h6::before {
+  content: 'H6 ';
+  font-size: 12px;
+  color: var(--text-faint);
 }
