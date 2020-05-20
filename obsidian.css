@@ -19,6 +19,7 @@ p {
   --background-primary-alt: #44475a;
   --background-secondary: #282828;
   --background-secondary-alt: #282a36;
+  --tag-background: #A7B0B3;
   --text-normal: #f8f8f2;
   --text-faint: #bd93f9;
   --text-title-h1: #ff79c6;
@@ -45,6 +46,7 @@ p {
   --background-primary-alt: #F1F1F1;
   --background-secondary: #F1F1F1;
   --background-secondary-alt: #CFC1ED;
+  --tag-background: #CFC1ED;
   --text-normal: #222222;
   --text-faint: #777777;
   --text-title-h1: #9d0006;
@@ -106,7 +108,11 @@ a,
 }
 
 .internal-link:after {
-  content: "\01F517";
+  content: "\01F4CE";
+}
+
+.CodeMirror .hmd-link-icon:after{
+  content: "\01F517" !important;
 }
 
 a:hover,
@@ -199,8 +205,12 @@ blockquote {
   font-weight: 600 !important;
 }
 
+.status-bar {
+  border: none;
+  box-shadow: 0px -1px 0px rgba(17,17,26,0.05), 0px -2px 8px rgba(17,17,26,0.1);
+}
+
 .side-dock-panels-container {
-  border-right: 1px solid var(--background-secondary-alt) !important;
   color: var(--text-muted) !important;
 }
 
@@ -338,14 +348,16 @@ table tr th {
   background-color: var(--background-secondary) !important;
 }
 
-table tr:last-child td:first-child {
+/* not working: */
+
+/* table tr:last-child td:first-child {
   border-bottom-left-radius: 4px !important;
 }
 
 table tr:last-child td:last-child {
   border-bottom-right-radius: 4px !important;
 }
-
+ */
 .suggestion-item.is-selected {
   background-color: var(--background-secondary);
 }
@@ -432,28 +444,45 @@ table tr:last-child td:last-child {
   font-size: 0.6em;
 }
 
+/********/
+/* tags */
+/********/
+
+/* actual tag in preview */
+/* source: https://github.com/obsidian-ezs/obsidian-ursa/blob/master/obsidian.css */
+
+a.tag {
+  color: var(--text-normal) !important;
+  background-color: var(--tag-background);
+  text-decoration: none;
+  border-radius: 0.7em;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+}
 
 /* Tag left side pillbox */
 
 .cm-s-obsidian span.cm-hashtag-begin {
-  border-top-left-radius: 250px;
-  border-bottom-left-radius: 250px;
-  padding-left: 10px;
-  padding-bottom: 4px;
-  padding-top: 2px;
+  color: var(--text-normal);
+  background-color: var(--tag-background);
+  border-top-left-radius: 0.7em;
+  border-bottom-left-radius: 0.7em;
+  padding-left: 0.5em;
+  padding-bottom: 0.1em;
+  padding-top: 0;
   text-decoration: none;
   font-weight: bold;
 }
 
-
 /* Tag right side pillbox */
 
 .cm-s-obsidian span.cm-hashtag-end {
-  border-top-right-radius: 250px;
-  border-bottom-right-radius: 250px;
-  padding-right: 12px;
-  padding-bottom: 4px;
-  padding-top: 6px;
+  color: var(--text-normal);
+  background-color: var(--tag-background);
+  border-top-right-radius: 0.7em;
+  border-bottom-right-radius: 0.7em;
+  padding-right: 0.5em;
+  padding-bottom: 0;
+  padding-top: 0;
   text-decoration: none;
   font-weight: bold;
 }
@@ -496,3 +525,5 @@ h6::before {
   font-size: 12px;
   color: var(--text-faint);
 }
+
+
