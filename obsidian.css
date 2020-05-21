@@ -49,12 +49,12 @@ p {
   --tag-background: #CFC1ED;
   --text-normal: #222222;
   --text-faint: #777777;
-  --text-title-h1: #9d0006;
-  --text-title-h2: #af3a03;
-  --text-title-h3: #b57614;
-  --text-title-h4: #79740e;
-  --text-title-h5: #427b58;
-  --text-title-h6: #063642;
+  --text-title-h1: #8556B4;
+  --text-title-h2: #9f4da6;
+  --text-title-h3: #b24695;
+  --text-title-h4: #c04182;
+  --text-title-h5: #c8416e;
+  --text-title-h6: #cb455b;
   --text-link: #458588;
   --text-a: #8556B4;
   --text-a-hover: #017B76;
@@ -456,7 +456,8 @@ a.tag {
   background-color: var(--tag-background);
   text-decoration: none;
   border-radius: 0.7em;
-  padding: 0.1em 0.5em 0.1em 0.5em;
+  padding: 0.1em 0.5em 0.2em 0.5em;
+  font-weight: bold;
 }
 
 /* Tag left side pillbox */
