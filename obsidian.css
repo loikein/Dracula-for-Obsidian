@@ -21,6 +21,7 @@ p {
   --background-secondary-alt: #282a36;
   --tag-background: #A7B0B3;
   --text-normal: #f8f8f2;
+  --text-muted: #bd93f9;
   --text-faint: #bd93f9;
   --text-title-h1: #ff79c6;
   --text-title-h2: #bd93f9;
@@ -28,17 +29,13 @@ p {
   --text-title-h4: #ffb86c;
   --text-title-h5: #50fa7b;
   --text-title-h6: #8be9fd;
-  --text-link: #8be9fd;
-  --text-a: #50fa7b;
-  --text-a-hover: #bd93f9;
-  --text-mark: #8be9fd;
+  --text-accent: #50fa7b;
+  --text-accent-hover: #8be9fd;
   --pre-code: #282a36;
   --text-highlight-bg: #6272a4;
   --interactive-accent: #ffb86c;
   --interactive-before: #ffb86c;
   --background-modifier-border: #8be9fd;
-  --blockquote-border: #bd93f9;
-  --text-accent: #8be9fd;
 }
 
 .theme-light {
@@ -48,6 +45,7 @@ p {
   --background-secondary-alt: #CFC1ED;
   --tag-background: #CFC1ED;
   --text-normal: #222222;
+  --text-muted: #777777;
   --text-faint: #777777;
   --text-title-h1: #8556B4;
   --text-title-h2: #9f4da6;
@@ -55,17 +53,13 @@ p {
   --text-title-h4: #c04182;
   --text-title-h5: #c8416e;
   --text-title-h6: #cb455b;
-  --text-link: #458588;
-  --text-a: #8556B4;
-  --text-a-hover: #017B76;
-  --text-mark: #FAB8B8;
-  --pre-code: #F1F1F1;
+  --text-accent: #8556B4;
+  --text-accent-hover: #017B76;
   --text-highlight-bg: #FAB8B8;
+  --pre-code: #F1F1F1;
   --interactive-accent: #8556B4;
   --interactive-before: #FCFCFC;
   --background-modifier-border: #8556B4;
-  --text-accent: #8556B4;
-  --text-muted: #777777;
 }
 
 #graph-view-canvas .links {
@@ -78,7 +72,7 @@ p {
   width: 34px !important;
 }
 
-.checkbox-container:after {
+.checkbox-container::after {
   background-color: var(--background-secondary-alt);
   height: 11px !important;
   width: 14px !important;
@@ -99,7 +93,7 @@ a,
 .cm-hmd-internal-link,
 .cm-link,
 .cm-formatting-link {
-  color: var(--text-a) !important;
+  color: var(--text-accent) !important;
   text-decoration: none !important;
 }
 
@@ -107,23 +101,30 @@ a,
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
-.internal-link:after {
+/* paper-clip after internal links */
+
+.internal-link::after {
   content: "\01F4CE";
 }
 
-.CodeMirror .hmd-link-icon:after{
+/* this does not overwrite default CSS: */
+
+.CodeMirror .hmd-link-icon::after{
   content: "\01F517" !important;
 }
 
 a:hover,
 .internal-link:hover {
-  color: var(--text-a-hover) !important;
+  color: var(--text-accent-hover) !important;
   text-decoration: none !important;
 }
 
-/* ==highlight== in the preview */
+/* ==highlight== in preview */
 mark {
-  padding: 0.1em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
 }
 
 .file-view-actions a,
@@ -132,12 +133,12 @@ mark {
 }
 
 .file-view-actions a:hover {
-  color: var(--text-a) !important;
+  color: var(--text-accent) !important;
 }
 
 .cl-underlined-text {
   text-decoration: none !important;
-  color: var(--text-link) !important;
+  color: var(--text-accent-hover) !important;
 }
 
 .cm-tag {
@@ -166,35 +167,9 @@ code,
   font-size: 13.5px;
 }
 
-th {
-  font-weight: 600 !important;
-}
-
-thead {
-  border-bottom: 2px solid var(--background-modifier-border);
-}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-blockquote {
-  border-top: none !important;
-  border-right: none !important;
-  border-bottom: none !important;
-  margin-left: 1em;
-  margin-right: 1em;
-  padding-left: 0.2em !important;
-  padding-right: 0.2em !important;
-  background: var(--background-secondary);
-}
-
 .markdown-preview-view hr {
   height: 1px;
   background: var(--background-modifier-border);
-  /* background-image: linear-gradient(to right, var(--background-primary),var(--background-modifier-border), var(--background-primary)); */
 }
 
 .main-container-header {
@@ -207,7 +182,8 @@ blockquote {
 
 .status-bar {
   border: none;
-  box-shadow: 0px -1px 0px rgba(17,17,26,0.05), 0px -2px 8px rgba(17,17,26,0.1);
+  box-shadow: 0px -1px 0px rgba(17,17,26,0.05),
+              0px -2px 8px rgba(17,17,26,0.1);
 }
 
 .side-dock-panels-container {
@@ -229,7 +205,7 @@ blockquote {
 .side-dock-ribbon-action.is-active:hover,
 .nav-action-button:hover,
 .side-dock-collapse-btn:hover {
-  color: var(--text-a);
+  color: var(--text-accent);
 }
 
 .nav-file {
@@ -258,8 +234,7 @@ blockquote {
 }
 
 /*Editor padding*/
-.cm-s-obsidian
-{
+.cm-s-obsidian {
   padding-left: 1em !important;
   padding-right: 1em !important;
 }
@@ -340,12 +315,21 @@ blockquote {
   color: var(--text-title-h6);
 }
 
-table, table tr th, table tr td {
+/* table styles */
+
+table,
+table tr th,
+table tr td {
   border: 1px solid var(--text-muted) !important;
 }
 
 table tr th {
   background-color: var(--background-secondary) !important;
+  font-weight: 600 !important;
+}
+
+table thead {
+  border-bottom: 2px solid var(--background-modifier-border);
 }
 
 /* not working: */
@@ -358,6 +342,7 @@ table tr:last-child td:last-child {
   border-bottom-right-radius: 4px !important;
 }
  */
+
 .suggestion-item.is-selected {
   background-color: var(--background-secondary);
 }
@@ -368,30 +353,30 @@ table tr:last-child td:last-child {
 }
 
 .theme-light strong {
-  color: var(--text-a) !important;
+  color: var(--text-accent);
   font-weight: bolder;
 }
 
 .theme-light em {
-  color: #000000;
+  color: var(--text-accent);
 }
 
 .theme-dark strong {
-  color: var(--text-a) !important;
+  color: var(--text-accent);
   font-weight: bolder;
 }
 
 .theme-dark em {
-  color: #b5c7c7;
+  color: var(--text-accent);
 }
 
 .cm-s-obsidian .cm-strong {
   font-weight: bolder;
-  color: var(--text-a) !important;
+  color: var(--text-accent);
 }
 
 .search-result-file-title {
-  color: var(--text-a) !important;
+  color: var(--text-accent) !important;
   font-weight: bolder;
 }
 
@@ -488,7 +473,17 @@ a.tag {
   font-weight: bold;
 }
 
-/* add some header prefix in preview */
+/* add some margin before subheadings in preview panel */
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-top: 1em;
+}
+
+/* add some headings prefix in preview */
 /* source: https://github.com/obsidian-ezs/obsidian-ursa/blob/master/obsidian.css */
 
 h1::before {
@@ -527,7 +522,7 @@ h6::before {
   color: var(--text-faint);
 }
 
-/* settings popup */
+/* setting popup */
 
 .mod-settings {
   border: none;
@@ -537,10 +532,15 @@ h6::before {
   border-width: 5px;
 }
 
-/* unify all paragraphs top & bottom margins */
+/* blockquote & p */
 
 .markdown-preview-view blockquote {
-  padding: 0;
+  border-left: 5px solid var(--background-modifier-border);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  padding: 0 0 0 0.2em;
+  background: var(--background-secondary);
 }
 
 .CodeMirror div.HyperMD-hover > .HyperMD-hover-content p,
@@ -550,6 +550,7 @@ h6::before {
 .eula-text p {
   margin-top: 1em;
   margin-bottom: 1em;
+  /* line-height: 1.3; */
 }
 
 @media only screen and (max-width: 720px){
@@ -559,8 +560,14 @@ h6::before {
   }
 }
 
-/* img experiment */
+/* img styling experiment */
 /* reference: https://bradfrost.com/web/ */
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .preview img,
 .markdown-preview-view img {
@@ -568,5 +575,5 @@ h6::before {
   box-shadow: 0 10px 0 -5px #a27ec9,
               0 20px 0 -10px #bfa7db,
               0 30px 0 -16px #ddd2eb;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
