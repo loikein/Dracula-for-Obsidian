@@ -148,8 +148,11 @@ code,
 }
 
 .markdown-preview-view hr {
-  height: 1px;
+  height: 3px;
   background: var(--background-modifier-border);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .title {
@@ -234,18 +237,32 @@ code,
   font-weight: 600;
 }
 
+/* titles */
+
+/* add some margin before subheadings in preview panel */
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  padding-top: 1rem;
+}
+
 .cm-header-1,
 .markdown-preview-view h1 {
   font-weight: 600;
   font-size: 34px;
   color: var(--text-title-h1);
+  line-height: 1.2 !important; /* not working for cm-headers */
 }
 
+.cm-s-obsidian pre.HyperMD-header.HyperMD-header-2,
 .cm-header-2,
 .markdown-preview-view h2 {
   font-weight: 600;
   font-size: 28px;
   color: var(--text-title-h2);
+  line-height: 1.3;
 }
 
 .cm-header-3,
@@ -253,6 +270,7 @@ code,
   font-weight: 600;
   font-size: 26px;
   color: var(--text-title-h3);
+  line-height: 1.3;
 }
 
 .cm-header-4,
@@ -260,6 +278,7 @@ code,
   font-weight: 600;
   font-size: 22px;
   color: var(--text-title-h4);
+  line-height: 1.3;
 }
 
 .cm-header-5,
@@ -267,6 +286,7 @@ code,
   font-weight: 600;
   font-size: 20px;
   color: var(--text-title-h5);
+  line-height: 1.3;
 }
 
 .cm-header-6,
@@ -274,6 +294,54 @@ code,
   font-weight: 600;
   font-size: 20px;
   color: var(--text-title-h6);
+  line-height: 1.3;
+}
+
+/* bear-like # style */
+/* source: https://gist.github.com/seanwcom/698cf161222d194118d217d77a380d8b */
+
+.cm-formatting-header {
+  color: var(--text-faint);
+  font-size: 0.6em;
+}
+
+/* add some headings prefix in preview */
+/* source: https://github.com/obsidian-ezs/obsidian-ursa/blob/master/obsidian.css */
+
+.markdown-preview-view h1::before {
+  content: 'H1 ';
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.markdown-preview-view h2::before {
+  content: 'H2 ';
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.markdown-preview-view h3::before {
+  content: 'H3 ';
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.markdown-preview-view h4::before {
+  content: 'H4 ';
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.markdown-preview-view h5::before {
+  content: 'H5 ';
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.markdown-preview-view h6::before {
+  content: 'H6 ';
+  font-size: 12px;
+  color: var(--text-faint);
 }
 
 /* table styles */
@@ -362,24 +430,6 @@ table tr:last-child td:last-child {
 }
 
 
-/* bear-like title style */
-/* source: https://gist.github.com/seanwcom/698cf161222d194118d217d77a380d8b */
-
-/* Enable wrapping of code blocks in the preview panel */
-
-.theme-light code[class*="language-"],
-.theme-light pre[class*="language-"] {
-  white-space: pre-wrap;
-}
-
-
-/* Changing size/color of the header hashtags ## */
-
-.cm-formatting-header {
-  color: var(--text-faint);
-  font-size: 0.6em;
-}
-
 /********/
 /* tags */
 /********/
@@ -424,55 +474,6 @@ a.tag {
   font-weight: 400;
 }
 
-/* add some margin before subheadings in preview panel */
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding-top: 1rem;
-}
-
-/* add some headings prefix in preview */
-/* source: https://github.com/obsidian-ezs/obsidian-ursa/blob/master/obsidian.css */
-
-h1::before {
-  content: 'H1 ';
-  font-size: 12px;
-  color: var(--text-faint);
-}
-
-h2::before {
-  content: 'H2 ';
-  font-size: 12px;
-  color: var(--text-faint);
-}
-
-h3::before {
-  content: 'H3 ';
-  font-size: 12px;
-  color: var(--text-faint);
-}
-
-h4::before {
-  content: 'H4 ';
-  font-size: 12px;
-  color: var(--text-faint);
-}
-
-h5::before {
-  content: 'H5 ';
-  font-size: 12px;
-  color: var(--text-faint);
-}
-
-h6::before {
-  content: 'H6 ';
-  font-size: 12px;
-  color: var(--text-faint);
-}
-
 /* setting popup */
 
 .mod-settings {
@@ -486,14 +487,15 @@ h6::before {
 /* blockquote & p */
 
 .markdown-preview-view blockquote {
-  border-left: 5px solid var(--background-modifier-border);
+  border-left: 3px solid var(--background-modifier-border);
   border-top: none;
   border-right: none;
-  border-bottom: none;
-  padding: 0 0 0 0.5em;
-  background: var(--background-secondary);
-  margin-left: 1em;
+  border-bottom: 3px solid var(--background-modifier-border);
+  padding: 0 0 0 0.7em;
+  /* background: var(--background-secondary); */
+  margin-left: 0;
   margin-right: 0;
+  border-radius: 0;
 }
 
 .CodeMirror div.HyperMD-hover > .HyperMD-hover-content p,
